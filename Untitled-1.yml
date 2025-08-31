@@ -1,0 +1,19 @@
+            - nazwa: Cache
+  zastosowania: actions/cache@v4.2.4
+  z:
+    # Lista plików, katalogów i wzorców symboli wieloznacznych do buforowania i przywracania
+    ścieżka:
+    # Jawny klucz do przywracania i zapisywania pamięci podręcznej
+    klawisz:
+    # Uporządkowany ciąg wielowierszowy zawierający listę kluczy dopasowanych do prefiksu, które służą do przywracania nieaktualnej pamięci podręcznej, jeśli nie wystąpiło trafienie do pamięci podręcznej dla klucza. Uwaga: `cache-hit` w tym przypadku zwraca wartość false.
+    przywróć-klucze: # opcjonalnie
+    # Rozmiar fragmentu używany do dzielenia dużych plików podczas przesyłania, w bajtach
+    upload-chunk-size: # opcjonalny
+    # Opcjonalna wartość logiczna, gdy jest włączona, umożliwia programom uruchamiającym system Windows zapisywanie lub przywracanie pamięci podręcznej, która może zostać przywrócona lub zapisana odpowiednio na innych platformach
+    enableCrossOsArchive: # opcjonalne, domyślnie false
+    # Niepowodzenie przepływu pracy, jeśli nie zostanie znaleziony wpis w pamięci podręcznej
+    fail-on-cache-miss: # opcjonalny, wartością domyślną jest false
+    # Sprawdź, czy dla podanych danych wejściowych (klucz, przywracanie kluczy) istnieje wpis w pamięci podręcznej bez pobierania pamięci podręcznej
+    tylko wyszukiwanie: # opcjonalne, wartością domyślną jest fałsz
+    # Uruchom krok końcowy, aby zapisać pamięć podręczną, nawet jeśli poprzedni krok się nie powiedzie
+    save-always: # opcjonalnie, domyślnie false
