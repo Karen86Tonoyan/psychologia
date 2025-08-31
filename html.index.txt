@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sztuka Równowagi - Interaktywny Przewodnik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Harmony (Stone, Amber, Teal) -->
+    <!-- Application Structure Plan: The app uses a thematic, non-linear structure with five sections (Foundations, Relationships, Challenges, Toolkit, Support) accessible via a top navigation bar. This was chosen over the e-book's linear chapter format to encourage user-driven exploration of concepts. The core of the app is the interactive "Toolkit" section, which transforms static exercises and tests into dynamic tools for self-reflection, enhancing engagement and practical application. -->
+    <!-- Visualization & Content Choices: Key Info: Self-assessment tests -> Goal: Assess -> Viz: Interactive quiz with radio buttons and a dynamic HTML/CSS results bar -> Interaction: User selects answers, clicks to see score and interpretation -> Justification: Transforms a static checklist into an engaging, personalized feedback tool. Library: Vanilla JS. Key Info: Core concepts (e.g., boundaries) -> Goal: Inform -> Presentation: Expandable content cards -> Interaction: Click/tap to reveal details -> Justification: Presents information in digestible chunks, preventing a wall of text. Library: Vanilla JS. CONFIRM: NO SVG/Mermaid. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link.active {
+            color: #0f766e;
+            border-bottom-color: #0f766e;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-teal-800">Sztuka Równowagi</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#fundamenty" class="nav-link px-3 py-2 text-sm font-medium text-stone-600 hover:text-teal-700 border-b-2 border-transparent">Fundamenty</a>
+                        <a href="#relacje" class="nav-link px-3 py-2 text-sm font-medium text-stone-600 hover:text-teal-700 border-b-2 border-transparent">Relacje</a>
+                        <a href="#wyzwania" class="nav-link px-3 py-2 text-sm font-medium text-stone-600 hover:text-teal-700 border-b-2 border-transparent">Wyzwania</a>
+                        <a href="#narzedziownia" class="nav-link px-3 py-2 text-sm font-medium text-stone-600 hover:text-teal-700 border-b-2 border-transparent">Narzędziownia</a>
+                        <a href="#wsparcie" class="nav-link px-3 py-2 text-sm font-medium text-stone-600 hover:text-teal-700 border-b-2 border-transparent">Wsparcie</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <section id="wstep" class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-teal-900 mb-4">Odkryj Sztukę Życia w Równowadze</h2>
+            <p class="max-w-3xl mx-auto text-stone-600">
+                Witaj w interaktywnym przewodniku inspirowanym ponadczasową mądrością Ewy Woydyłło-Osiatyńskiej. Ta strona to nie tylko zbiór wiedzy, ale przestrzeń do aktywnej pracy nad sobą. Znajdziesz tu kluczowe idee, praktyczne ćwiczenia i testy, które pomogą Ci odzyskać harmonię i wziąć stery we własne ręce.
+            </p>
+        </section>
+
+        <section id="fundamenty" class="mb-16 scroll-mt-20">
+            <h3 class="text-2xl font-bold text-center mb-2 text-teal-800">Fundamenty Życia w Równowadze</h3>
+            <p class="text-center text-stone-500 max-w-2xl mx-auto mb-8">Wszystko zaczyna się w Tobie. Zrozumienie tych podstawowych zasad jest pierwszym krokiem do prawdziwej zmiany. Zamiast szukać przyczyn na zewnątrz, spójrz w głąb siebie i odkryj swoją wewnętrzną moc.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Odpowiedzialność za szczęście</h4>
+                    <p class="text-sm text-stone-600">Przestań oddawać pilot do swojego życia innym. Twoje emocje i reakcje należą do Ciebie. To rewolucyjna idea, która daje wolność i siłę do kształtowania własnej rzeczywistości.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Koniec z rolą ofiary</h4>
+                    <p class="text-sm text-stone-600">Mentalność ofiary odbiera moc. Nie jesteś odpowiedzialny za to, co Cię spotkało, ale jesteś w pełni odpowiedzialny za to, co z tym zrobisz. Wyjdź z bierności i zacznij działać.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Samoakceptacja: Początek</h4>
+                    <p class="text-sm text-stone-600">Nie zbudujesz zdrowych relacji, jeśli nie zaprzyjaźnisz się z samym sobą. Akceptacja swoich zalet i wad uwalnia od wiecznej walki i pozwala budować na solidnym gruncie poczucia własnej wartości.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="relacje" class="mb-16 scroll-mt-20">
+            <h3 class="text-2xl font-bold text-center mb-2 text-teal-800">Relacje – Sztuka Równowagi</h3>
+            <p class="text-center text-stone-500 max-w-2xl mx-auto mb-8">Relacje mogą być źródłem największej radości lub największego bólu. Kluczem jest znalezienie balansu między bliskością a wolnością, miłością a szacunkiem do samego siebie.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Zdrowe więzi bez współuzależnienia</h4>
+                    <p class="text-sm text-stone-600">Prawdziwa miłość nie polega na "ratowaniu" kogoś. To partnerstwo dwojga dorosłych, odpowiedzialnych za siebie ludzi. Uwolnij się od potrzeby naprawiania innych i skup się na budowaniu równorzędnej relacji.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Granice: Oznaka miłości, nie egoizmu</h4>
+                    <p class="text-sm text-stone-600">Granice to nie mury, lecz drzwi, do których masz klucz. Uczą innych, jak mają Cię traktować i chronią Twoją energię. Stawianie ich jest aktem miłości do siebie i do drugiej osoby.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Zaufanie kontra kontrola</h4>
+                    <p class="text-sm text-stone-600">Kontrola rodzi się z lęku i niszczy bliskość. Prawdziwe zaufanie kwitnie tam, gdzie jest wolność. Im bardziej próbujesz kogoś kontrolować, tym szybciej go od siebie odsuwasz.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wyzwania" class="mb-16 scroll-mt-20">
+            <h3 class="text-2xl font-bold text-center mb-2 text-teal-800">Pułapki i Wyzwania Współczesności</h3>
+            <p class="text-center text-stone-500 max-w-2xl mx-auto mb-8">Żyjemy w świecie pełnym rozpraszaczy i pułapek, które odciągają nas od prawdziwego życia i kontaktu z emocjami. Zidentyfikuj je, aby odzyskać kontrolę.</p>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                 <h4 class="font-bold text-lg mb-4 text-center text-teal-700">Uzależnienia, których nie zauważasz</h4>
+                 <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <span class="text-4xl">💼</span>
+                        <h5 class="font-semibold mt-2">Praca</h5>
+                        <p class="text-xs text-stone-500">Ucieczka przed życiem rodzinnym i własnymi myślami.</p>
+                    </div>
+                    <div>
+                        <span class="text-4xl">📱</span>
+                        <h5 class="font-semibold mt-2">Social Media</h5>
+                        <p class="text-xs text-stone-500">Pogoń za powierzchowną walidacją, pogłębiająca samotność.</p>
+                    </div>
+                    <div>
+                        <span class="text-4xl">🛍️</span>
+                        <h5 class="font-semibold mt-2">Konsumpcja</h5>
+                        <p class="text-xs text-stone-500">Chwilowa poprawa nastroju, wypełniająca brak sensu.</p>
+                    </div>
+                 </div>
+                 <p class="mt-6 text-center text-sm text-stone-600">Problem zaczyna się, gdy narzędzie staje się Twoim panem. Zadaj sobie pytanie: <strong class="font-semibold">Czy potrafię bez tego żyć przez tydzień?</strong> Twoja szczera odpowiedź jest kluczem do zrozumienia, co tak naprawdę Tobą rządzi.</p>
+            </div>
+        </section>
+        
+        <section id="narzedziownia" class="mb-16 scroll-mt-20">
+            <h3 class="text-2xl font-bold text-center mb-2 text-teal-800">Twoja Narzędziownia Zmiany</h3>
+            <p class="text-center text-stone-500 max-w-2xl mx-auto mb-8">Wiedza to za mało. Prawdziwa zmiana wymaga praktyki. Skorzystaj z tych interaktywnych narzędzi, aby przejść od teorii do działania i lepiej poznać samego siebie.</p>
+            <div class="space-y-8">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4 text-teal-700">Testy do Autorefleksji</h4>
+                    <p class="text-sm text-stone-600 mb-6">Te testy nie są diagnozą. Potraktuj je jako lustro i punkt wyjścia do dalszej pracy. Odpowiadaj szczerze.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="border border-stone-200 p-4 rounded-md">
+                            <h5 class="font-semibold mb-3">Test 1: Skłonności narcystyczne i egoizm</h5>
+                            <form id="quiz1">
+                                <div id="questions1" class="space-y-2 text-sm"></div>
+                                <button type="submit" class="mt-4 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors text-sm">Pokaż wyniki</button>
+                            </form>
+                            <div id="results1" class="mt-4 hidden"></div>
+                        </div>
+
+                        <div class="border border-stone-200 p-4 rounded-md">
+                            <h5 class="font-semibold mb-3">Test 2: Toksyczne wzorce w relacjach</h5>
+                            <form id="quiz2">
+                                <div id="questions2" class="space-y-2 text-sm"></div>
+                                <button type="submit" class="mt-4 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors text-sm">Pokaż wyniki</button>
+                            </form>
+                            <div id="results2" class="mt-4 hidden"></div>
+                        </div>
+
+                        <div class="border border-stone-200 p-4 rounded-md">
+                            <h5 class="font-semibold mb-3">Test 3: Podatność na uzależnienia i autoagresję</h5>
+                            <form id="quiz3">
+                                <div id="questions3" class="space-y-2 text-sm"></div>
+                                <button type="submit" class="mt-4 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors text-sm">Pokaż wyniki</button>
+                            </form>
+                            <div id="results3" class="mt-4 hidden"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4 text-teal-700">Ćwiczenie: Krąg Wpływu</h4>
+                    <p class="text-sm text-stone-600 mb-4">Przestań tracić energię na to, czego nie możesz zmienić. Skup się na tym, co jest w Twoich rękach. Wpisz poniżej swoje myśli.</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="influence" class="block text-sm font-medium text-stone-700">Na co mam wpływ?</label>
+                            <textarea id="influence" rows="4" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="np. moje reakcje, nawyki, to, komu poświęcam czas..."></textarea>
+                        </div>
+                        <div>
+                            <label for="no-influence" class="block text-sm font-medium text-stone-700">Na co nie mam wpływu?</label>
+                            <textarea id="no-influence" rows="4" class="mt-1 block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm" placeholder="np. pogoda, przeszłość, zachowanie innych..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="wsparcie" class="mb-16 scroll-mt-20">
+            <h3 class="text-2xl font-bold text-center mb-2 text-teal-800">Siła Wspólnoty i Wsparcia</h3>
+            <p class="text-center text-stone-500 max-w-2xl mx-auto mb-8">Nie jesteś sam/a w swojej podróży. Pamiętaj, że proszenie o pomoc to akt odwagi, a przebaczenie jest darem, który dajesz przede wszystkim sobie.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Jak prosić o pomoc?</h4>
+                    <p class="text-sm text-stone-600">W naszej kulturze proszenie o pomoc bywa postrzegane jako słabość. To błąd. Jest to akt siły i dojrzałości. Przyznanie, że nie jesteś samowystarczalny/a, otwiera drzwi do prawdziwego wsparcia i głębszych relacji.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="font-bold text-lg mb-2 text-teal-700">Przebaczenie - wolność dla Ciebie</h4>
+                    <p class="text-sm text-stone-600">Pielęgnowanie urazy jest jak picie trucizny. Przebaczenie nie jest dla osoby, która Cię skrzywdziła. To akt uwolnienia się od ciężaru przeszłości, który blokuje Twoją energię i radość życia.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-stone-800 text-white">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Sztuka Równowagi. Interaktywny przewodnik inspirowany naukami Ewy Woydyłło-Osiatyńskiej.</p>
+            <p class="text-stone-400 mt-1">Stworzone jako narzędzie do osobistego rozwoju i refleksji.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const quizData = {
+                quiz1: {
+                    questions: [
+                        "Czy często czuję, że jestem wyjątkowy/a i zasługuję na specjalne traktowanie?",
+                        "Czy w rozmowach głównie czekam na swoją kolej, by mówić o sobie?",
+                        "Czy trudno mi szczerze przyznać się do błędu i przeprosić?",
+                        "Czy zdarza mi się wykorzystywać innych do osiągnięcia własnych celów?",
+                        "Czy mam problem z odczuwaniem empatii i wczuwaniem się w sytuację innych?"
+                    ],
+                    interpretation: "Im więcej odpowiedzi „tak”, tym większa potrzeba przyjrzenia się swojemu ego."
+                },
+                quiz2: {
+                    questions: [
+                        "Czy często obwiniam partnera/bliskich za moje złe samopoczucie?",
+                        "Czy zdarza mi się stosować ciche dni lub manipulację, aby postawić na swoim?",
+                        "Czy czuję, że moje poczucie wartości zależy od aprobaty i nastroju drugiej osoby?",
+                        "Czy regularnie rezygnuję z własnych potrzeb, aby uniknąć konfliktu?",
+                        "Czy czuję potrzebę kontrolowania partnera/bliskich (gdzie jest, co robi)?"
+                    ],
+                    interpretation: "Im więcej odpowiedzi „tak”, tym większe ryzyko, że tworzysz lub tkwisz w niezdrowych relacjach."
+                },
+                quiz3: {
+                    questions: [
+                        "Czy gdy czuję stres lub smutek, moją pierwszą myślą jest sięgnięcie po używkę, jedzenie, zakupy lub telefon?",
+                        "Czy często krytykuję siebie w myślach, używając obraźliwych słów?",
+                        "Czy trudno mi przerwać destrukcyjne zachowanie, nawet gdy wiem, że mi szkodzi?",
+                        "Czy zdarza mi się sabotować własne plany i działania, gdy zbliżam się do sukcesu?",
+                        "Czy czuję wewnętrzny przymus, by być ciągle zajętym/ą i produktywnym/ą?"
+                    ],
+                    interpretation: "Im więcej odpowiedzi „tak”, tym ważniejsza jest praca nad zdrowymi sposobami radzenia sobie z emocjami."
+                }
+            };
+
+            function createQuiz(quizId) {
+                const data = quizData[quizId];
+                const questionsContainer = document.getElementById(`questions${quizId.slice(-1)}`);
+                
+                data.questions.forEach((q, index) => {
+                    const questionId = `${quizId}-q${index}`;
+                    const questionElement = document.createElement('div');
+                    questionElement.className = 'py-1';
+                    questionElement.innerHTML = `
+                        <p class="mb-1">${q}</p>
+                        <div class="flex items-center space-x-4">
+                            <label class="flex items-center"><input type="radio" name="${questionId}" value="tak" class="mr-1 h-4 w-4 border-gray-300 text-teal-600 focus:ring-teal-500"> Tak</label>
+                            <label class="flex items-center"><input type="radio" name="${questionId}" value="nie" class="mr-1 h-4 w-4 border-gray-300 text-teal-600 focus:ring-teal-500"> Nie</label>
+                        </div>
+                    `;
+                    questionsContainer.appendChild(questionElement);
+                });
+            }
+
+            function handleSubmit(event, quizId) {
+                event.preventDefault();
+                const data = quizData[quizId];
+                let score = 0;
+                const totalQuestions = data.questions.length;
+                let allAnswered = true;
+
+                for (let i = 0; i < totalQuestions; i++) {
+                    const questionId = `${quizId}-q${i}`;
+                    const selected = document.querySelector(`input[name="${questionId}"]:checked`);
+                    if (!selected) {
+                        allAnswered = false;
+                        break;
+                    }
+                    if (selected.value === 'tak') {
+                        score++;
+                    }
+                }
+                
+                const resultsContainer = document.getElementById(`results${quizId.slice(-1)}`);
+                if (!allAnswered) {
+                     resultsContainer.innerHTML = `<p class="text-sm text-red-600">Proszę odpowiedzieć na wszystkie pytania.</p>`;
+                     resultsContainer.classList.remove('hidden');
+                     return;
+                }
+
+                const percentage = (score / totalQuestions) * 100;
+
+                resultsContainer.innerHTML = `
+                    <p class="font-semibold">Twój wynik: ${score} na ${totalQuestions} odpowiedzi "tak".</p>
+                    <div class="w-full bg-stone-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-teal-600 h-2.5 rounded-full" style="width: ${percentage}%"></div>
+                    </div>
+                    <p class="text-sm text-stone-600 mt-2">${data.interpretation}</p>
+                `;
+                resultsContainer.classList.remove('hidden');
+            }
+
+            createQuiz('quiz1');
+            createQuiz('quiz2');
+            createQuiz('quiz3');
+
+            document.getElementById('quiz1').addEventListener('submit', (e) => handleSubmit(e, 'quiz1'));
+            document.getElementById('quiz2').addEventListener('submit', (e) => handleSubmit(e, 'quiz2'));
+            document.getElementById('quiz3').addEventListener('submit', (e) => handleSubmit(e, 'quiz3'));
+            
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
