@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Psychologia Zwycięstwa – Karen Tonoyan</title>
+  <meta name="description" content="Odzyskaj swoje dziedzictwo i zbuduj relacje, na które zasługujesz. Pobierz książki Karen Tonoyan. Linia wsparcia: 796 230 413">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --black: #000000;
+      --white: #E0E0E0;
+      --gray: #888888;
+      --shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 48px 0 24px 0;
+      text-align: center;
+      background: var(--black);
+      border-bottom: 1px solid var(--gold);
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 2.8rem;
+      text-shadow: 0 1px 12px #222, 0 0 4px var(--gold);
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .cta {
+      margin: 26px 0;
+      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+      border: 2px solid var(--gold);
+      padding: 16px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      background: transparent;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s;
+    }
+    .cta:hover {
+      background: var(--gold);
+      color: var(--black);
+      cursor: pointer;
+    }
+    main {
+      flex: 1 0 auto;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px 0 16px;
+    }
+    section {
+      margin-bottom: 48px;
+    }
+    .books-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .book-card {
+      background: #161616;
+      border: 1.5px solid var(--gold);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      max-width: 310px;
+      padding: 22px 18px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .book-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .book-desc {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+    .book-btn {
+      background: var(--gold);
+      color: var(--black);
+      font-size: 1.09rem;
+      font-weight: 700;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 2px 7px #111;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .book-btn:hover {
+      background: #fffbe5;
+      color: #222;
+    }
+    .price {
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .contact-box {
+      background: #161616;
+      border: 1.5px solid var(--gold);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 26px 18px;
+      margin: 0 auto;
+      max-width: 400px;
+      text-align: left;
+    }
+    .contact-item {
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: 1rem;
+    }
+    .contact-item span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .hashtags {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.02rem;
+    }
+    .quote {
+      font-style: italic;
+      margin: 28px 0 12px 0;
+      color: #aaa;
+      text-align: center;
+    }
+    footer {
+      padding: 18px 0 6px 0;
+      text-align: center;
+      background: var(--black);
+      font-size: 0.97rem;
+      color: #777;
+      border-top: 1px solid var(--gold);
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .books-list {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .book-card {
+        max-width: 100%;
+      }
+      main { padding: 20px 5px 0 5px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">Psychologia Zwycięstwa</div>
+    <div class="subtitle">
+      Odzyskaj swoje dziedzictwo i zbuduj relacje, na które zasługujesz.<br>
+      Książki i wsparcie od <b>Karen Tonoyan</b>
+    </div>
+    <a href="#books" class="cta">Dołącz już dziś i odkryj swoją Psychologię Zwycięstwa!</a>
+  </header>
+  <main>
+    <section>
+      <h2 style="color:var(--gold);text-align:center;margin-bottom:18px;">Książki do pobrania</h2>
+      <div class="books-list" id="books">
+        <div class="book-card">
+          <div class="book-title">Psychologia Zwycięstwa</div>
+          <div class="price">Cena: 29 zł</div>
+          <div class="book-desc">
+            Praktyczny przewodnik do uzdrawiania relacji i pokonywania traumy. Poznaj mapę drogi do emocjonalnej wolności.
+          </div>
+          <a href="#" class="book-btn">Kup teraz</a>
+        </div>
+        <div class="book-card">
+          <div class="book-title">Odzyskane Dziedzictwo</div>
+          <div class="price">Cena: 19 zł</div>
+          <div class="book-desc">
+            Jak uleczyć rany z przeszłości i zbudować relacje, na które zasługujesz. Praktyczne narzędzia, ćwiczenia, inspiracje.
+          </div>
+          <a href="#" class="book-btn">Kup teraz</a>
+        </div>
+        <!-- Możesz dodać kolejne książki tutaj w takim samym formacie -->
+      </div>
+      <div style="text-align:center; margin-top:18px; color:var(--gray);font-size:0.98rem;">
+        Wszystkie książki dostępne są w wersji płatnej. Po zakupie otrzymasz plik PDF na e-mail.
+      </div>
+    </section>
+    <section>
+      <h2 style="color:var(--gold);text-align:center;margin-bottom:18px;">Kontakt i Wsparcie</h2>
+      <div class="contact-box">
+        <div class="contact-item"><span>E-mail:</span> kytonoyan38@gmail.com</div>
+        <div class="contact-item"><span>Imię i nazwisko:</span> Karen Tonoyan</div>
+        <div class="contact-item"><span>Linia wsparcia:</span> 796 230 413</div>
+      </div>
+      <div class="quote">
+        „Zwycięstwo to nie punkt na mapie. To droga, którą idziesz każdego dnia.”
+      </div>
+    </section>
+    <div class="hashtags">
+      #PsychologiaZwycięstwa #ZdrowiePsychiczne #RozwójOsobisty #Terapia #Motywacja
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Karen Tonoyan – Psychologia Zwycięstwa<br>
+    Wszelkie prawa zastrzeżone.
+  </footer>
+</body>
+</html>
